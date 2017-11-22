@@ -14,9 +14,20 @@ if (process.env.NODE_ENV !== 'test') {
 // To support URL-encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => res.json({ data: 'Welcome to Nearest Roads!' }));
+app.get('/fromLocation', (req, res) => {
+  let { lat, long, distance } = req.query;
 
-app.get('*', (req, res) => res.status(404).json({ error: 'Not Found.' }));
+  lat = parseFloat(lat);
+  long = parseFloat(long);
+  distance = parseFloat(distance);
+
+  nearestRoads.fromLocation(lat, long, distance, (err, data) => {
+    if (err) res.status(400).json({ error: err.message });
+    else res.status(200).json({ data });
+  });
+});
+
+app.get('*', (req, res) => res.status(404).json({ error: 'Route not found.' }));
 
 app.listen(port);
 
