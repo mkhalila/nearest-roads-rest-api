@@ -10,6 +10,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => res.json({ message: 'Welcome to Nearest Roads!' }));
 
+app.get('*', (req, res) => res.status(404).json({ error: 'Not Found.' }));
+
 app.listen(port);
 
 module.exports = app; // for testing
