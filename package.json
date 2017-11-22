@@ -1,0 +1,19 @@
+{
+  "name": "nearest-roads-rest-api",
+  "version": "1.0.0",
+  "description": "The REST API for the upcoming Android and web apps for nearest roads Edit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkhalila/nearest-roads-rest-api.git"
+  },
+  "author": "Khalil Ahmed <mkhalila@outlook.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mkhalila/nearest-roads-rest-api/issues"
+  },
+  "homepage": "https://github.com/mkhalila/nearest-roads-rest-api#readme"
+}
